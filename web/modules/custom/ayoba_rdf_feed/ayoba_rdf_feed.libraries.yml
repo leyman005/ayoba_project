@@ -1,0 +1,5 @@
+ayoba_rdf_feed_assets:
+  version: 1.x
+  css:
+    theme:
+      assets/css/ayoba_rdf_feed.css: {}

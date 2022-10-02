@@ -1,0 +1,38 @@
+<?php
+
+// hook theme
+function ayoba_rdf_feed_theme($existing, $type, $theme, $path)
+{
+    return [
+        'ayoba_rdf_feed' => [
+            'variables' => [
+                'feeds' => [],
+            ],
+            'template' => 'ayoba-rdf-feed',
+        ],
+    ];
+}
+
+// attach the css file
+function ayoba_rdf_feed_preprocess_page(&$variables)
+{
+    $variables['#attached']['library'][] = 'ayoba_rdf_feed/ayoba_rdf_feed_assets';
+}
+
+// hook cron, This cron will be running every hour
+function ayoba_rdf_feed_cron()
+{
+    // get the service
+    $ayoba_rdf_feed_service = \Drupal::service('ayoba_rdf_feed.ayoba_rdf_feed_service');
+    // get the url for the feed
+    $url = \Drupal::config('ayoba_rdf_feed_url_form.settings')->get('url');
+
+    if ($url != '') {
+        // set the url for the feed
+        $ayoba_rdf_feed_service->setUrl($url);
+        // get the feed
+        $ayoba_rdf_feed_service->getFeed();
+
+        \Drupal::logger('ayoba_rdf_feed')->notice('The feed was updated.');
+    }
+}

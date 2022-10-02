@@ -1,0 +1,12 @@
+.feed-content {
+    padding: 10px;
+}
+
+.feed-list {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.feed-list li a {
+    text-decoration: none;
+}

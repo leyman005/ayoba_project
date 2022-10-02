@@ -1,0 +1,3 @@
+services:
+  ayoba_rdf_feed.ayoba_rdf_feed_service: 
+    class: \Drupal\ayoba_rdf_feed\AyobaRdfFeedService

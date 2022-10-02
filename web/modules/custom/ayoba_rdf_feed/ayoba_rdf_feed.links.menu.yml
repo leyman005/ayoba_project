@@ -1,0 +1,13 @@
+ayoba_rdf_feed.displaynewsfeed:
+  title: RDF News Feeds
+  description: Link to the getFeed() method
+  route_name: ayoba_rdf_feed.getFeed
+  weight: 10
+  menu_name: main
+
+ayoba_rdf_feed.settings_form:
+  title: Ayoba RDF FEED
+  description: Configure Ayoba RDF FEED.
+  parent: system.admin_config_system
+  route_name: ayoba_rdf_feed.settings_form
+  weight: 10

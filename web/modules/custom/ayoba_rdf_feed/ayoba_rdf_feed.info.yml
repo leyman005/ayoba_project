@@ -1,0 +1,7 @@
+name: Ayoba RDF Feed
+description:  Custom RDF Feed that allows user to read rdf feeds
+package:  Manley's Custom Modules
+type: module
+version:  '1.0'
+core_version_requirement: ^8.8.0 || ^9
+configure: ayoba_rdf_feed.admin_settings

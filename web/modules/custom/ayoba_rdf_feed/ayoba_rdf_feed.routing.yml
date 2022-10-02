@@ -1,0 +1,15 @@
+ayoba_rdf_feed.getFeed:
+  path: '/mycustomfeed'
+  defaults:
+    _controller: '\Drupal\ayoba_rdf_feed\Controller\NewsFeedController::getFeed'
+    _title: 'RDF News'
+  requirements:
+    _permission: 'access content'
+
+ayoba_rdf_feed.settings_form:
+  path: '/admin/config/system/setfeedurl'
+  defaults:
+    _form: '\Drupal\ayoba_rdf_feed\Form\RDFFeedURLForm'
+    _title: 'Set Url'
+  requirements:
+    _permission: 'administer content'

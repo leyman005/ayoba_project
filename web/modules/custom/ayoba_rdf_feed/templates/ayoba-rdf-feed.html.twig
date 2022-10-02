@@ -1,0 +1,14 @@
+<div class="feed-content">
+    <ul class="feed-list">
+        {% for item in feeds.item %} 
+            <li><small>Title: </small><strong>{{ item.title }}</strong></li>
+            <li><small>Description: </small>{{ item.description }}</li>
+            <li><small>Author: </small>{{ item.author }}</li>
+            <li><a href="{{ item.link ?  item.link : item.guid }}" target="_blank">Read more &gt;</a></li>
+            {% if item.image.url != "" %}
+                <li><img src="{{ item.image.url }}" alt="{{ item.image.title }}" height="{{ item.image.height }}" width="{{ item.image.width }}" /></li>
+            {% endif %}
+            <hr/>
+        {% endfor %}
+    </ul>
+</div>
